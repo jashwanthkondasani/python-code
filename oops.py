@@ -107,4 +107,23 @@ account = BankAccount(1000)
 account.deposit(500)
 print("Balance:", account.get_balance())
 
+# Example: Method Overriding
+class Bird:
+    def fly(self):
+        print("Some birds can fly.")
+
+class Sparrow(Bird):
+    def fly(self):
+        print("Sparrow flies high.")
+
+class Ostrich(Bird):
+    def fly(self):
+        print("Ostrich cannot fly.")
+
+# Objects
+birds = [Sparrow(), Ostrich()]
+for b in birds:
+    b.fly()   # Same method, different behavior
+
+
         
