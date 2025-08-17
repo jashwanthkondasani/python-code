@@ -90,4 +90,21 @@ acc.deposit(1500)
 acc.withdraw(2000)
 acc.show_balance()
 
+
+# Example: Encapsulation with private variable
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance   # private variable
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+# Object
+account = BankAccount(1000)
+account.deposit(500)
+print("Balance:", account.get_balance())
+
         
