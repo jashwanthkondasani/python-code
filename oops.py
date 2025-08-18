@@ -125,5 +125,27 @@ birds = [Sparrow(), Ostrich()]
 for b in birds:
     b.fly()   # Same method, different behavior
 
+# Base class
+class Animal:
+    def speak(self):
+        print("This animal makes a sound")
+
+# Derived class
+class Dog(Animal):
+    def speak(self):
+        print("Woof! Woof!")
+
+# Derived class
+class Cat(Animal):
+    def speak(self):
+        print("Meow! Meow!")
+
+# Objects
+d = Dog()
+c = Cat()
+
+d.speak()
+c.speak()
+
 
         
