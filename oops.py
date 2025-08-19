@@ -201,4 +201,12 @@ print("After updating:", arr)
 print("Length:", len(arr))
 
 
+# Writing data to a file
+file = open("example.txt", "w")  # "w" = write mode
+file.write("Hello, this is the first line!\n")
+file.write("This is the second line.")
+file.close()
+print("File created and data written successfully!")
+
+
         
