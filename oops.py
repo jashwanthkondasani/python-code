@@ -213,5 +213,11 @@ with open("example.txt", "r") as f1, open("copy.txt", "w") as f2:
         f2.write(line)
 print("File copied successfully!")
 
+# Append data
+file = open("example.txt", "a")  # "a" = append mode
+file.write("\nThis line is appended!")
+file.close()
+print("Data appended successfully!")
+
 
         
