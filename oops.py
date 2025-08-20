@@ -220,4 +220,65 @@ file.close()
 print("Data appended successfully!")
 
 
+from abc import ABC, abstractmethod
+
+# Abstract class
+class Account(ABC):
+    def __init__(self, acc_no, holder_name, balance=0):
+        self.__acc_no = acc_no         # Private variable
+        self.__holder_name = holder_name
+        self.__balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print(f"Deposited {amount}, Balance: {self.__balance}")
+        else:
+            print("Invalid deposit amount")
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+            print(f"Withdrew {amount}, Balance: {self.__balance}")
+        else:
+            print("Insufficient balance")
+
+    def get_balance(self):
+        return self.__balance
+
+    @abstractmethod
+    def account_type(self):
+        pass
+
+
+# Savings Account
+class SavingsAccount(Account):
+    def __init__(self, acc_no, holder_name, balance=0, interest_rate=0.05):
+        super().__init__(acc_no, holder_name, balance)
+        self.interest_rate = interest_rate
+
+    def apply_interest(self):
+        interest = self.get_balance() * self.interest_rate
+        self.deposit(interest)
+        print(f"Interest {interest} applied.")
+
+    def account_type(self):
+        return "Savings"
+
+
+# Current Account
+class CurrentAccount(Account):
+    def account_type(self):
+        return "Current"
+
+
+# Test
+s_acc = SavingsAccount(101, "Alice", 1000)
+s_acc.deposit(500)
+s_acc.withdraw(300)
+s_acc.apply_interest()
+
+c_acc = CurrentAccount(102, "Bob", 2000)
+c_acc.withdraw(2500)
+
         
