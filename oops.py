@@ -340,4 +340,45 @@ member1.borrow_book(book1)
 lib.show_books()
 member1.return_book(book1)
 
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def __str__(self):
+        return f"{self.name} - ₹{self.price}"
+
+
+class Cart:
+    def __init__(self):
+        self.items = []
+
+    def add_product(self, product):
+        self.items.append(product)
+
+    def __add__(self, other):   # Operator Overloading
+        new_cart = Cart()
+        new_cart.items = self.items + other.items
+        return new_cart
+
+    def total_price(self):
+        return sum([item.price for item in self.items])
+
+    def show_cart(self):
+        for item in self.items:
+            print(item)
+        print("Total Price:", self.total_price())
+
+
+# Test
+cart1 = Cart()
+cart1.add_product(Product("Laptop", 50000))
+cart1.add_product(Product("Mouse", 1000))
+
+cart2 = Cart()
+cart2.add_product(Product("Phone", 20000))
+
+combined_cart = cart1 + cart2
+combined_cart.show_cart()
+
         
