@@ -281,4 +281,63 @@ s_acc.apply_interest()
 c_acc = CurrentAccount(102, "Bob", 2000)
 c_acc.withdraw(2500)
 
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+
+
+class Member:
+    def __init__(self, name):
+        self.name = name
+        self.borrowed_books = []
+
+    def borrow_book(self, book):
+        self.borrowed_books.append(book)
+        print(f"{self.name} borrowed {book}")
+
+    def return_book(self, book):
+        if book in self.borrowed_books:
+            self.borrowed_books.remove(book)
+            print(f"{self.name} returned {book}")
+
+
+class Library:
+    def __init__(self, name):
+        self.name = name
+        self.books = []
+        self.members = []
+
+    def add_book(self, book):
+        self.books.append(book)
+
+    def add_member(self, member):
+        self.members.append(member)
+
+    def show_books(self):
+        print("Books in library:")
+        for book in self.books:
+            print(book)
+
+
+# Test
+lib = Library("City Library")
+book1 = Book("Python Basics", "Guido")
+book2 = Book("AI & ML", "Andrew Ng")
+
+member1 = Member("Alice")
+member2 = Member("Bob")
+
+lib.add_book(book1)
+lib.add_book(book2)
+lib.add_member(member1)
+lib.add_member(member2)
+
+member1.borrow_book(book1)
+lib.show_books()
+member1.return_book(book1)
+
         
