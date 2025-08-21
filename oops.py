@@ -418,4 +418,35 @@ acc.withdraw(200)
 acc.add_interest()
 print("Final Balance:", acc.get_balance())
 
+
+class LibraryItem:
+    def __init__(self, title):
+        self.title = title
+
+    def display_info(self):
+        raise NotImplementedError("Subclass must implement abstract method")
+
+
+class Book(LibraryItem):
+    def __init__(self, title, author):
+        super().__init__(title)
+        self.author = author
+
+    def display_info(self):
+        print(f"Book: {self.title}, Author: {self.author}")
+
+
+class DVD(LibraryItem):
+    def __init__(self, title, duration):
+        super().__init__(title)
+        self.duration = duration
+
+    def display_info(self):
+        print(f"DVD: {self.title}, Duration: {self.duration} mins")
+
+
+# Polymorphism in action
+items = [Book("Python OOP", "John"), DVD("AI Basics", 120)]
+for item in items:
+    item.display_info()
         
