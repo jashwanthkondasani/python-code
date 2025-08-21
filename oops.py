@@ -381,4 +381,41 @@ cart2.add_product(Product("Phone", 20000))
 combined_cart = cart1 + cart2
 combined_cart.show_cart()
 
+class BankAccount:
+    def __init__(self, account_no, balance=0):
+        self.__account_no = account_no   # private attribute
+        self.__balance = balance
+
+    def deposit(self, amount):
+        self.__balance += amount
+        return self.__balance
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Insufficient Balance!")
+        return self.__balance
+
+    def get_balance(self):
+        return self.__balance
+
+
+class SavingsAccount(BankAccount):
+    def __init__(self, account_no, balance=0, interest_rate=0.05):
+        super().__init__(account_no, balance)
+        self.interest_rate = interest_rate
+
+    def add_interest(self):
+        interest = self.get_balance() * self.interest_rate
+        self.deposit(interest)
+
+
+# Test
+acc = SavingsAccount(12345, 1000)
+acc.deposit(500)
+acc.withdraw(200)
+acc.add_interest()
+print("Final Balance:", acc.get_balance())
+
         
