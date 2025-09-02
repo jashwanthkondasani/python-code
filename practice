@@ -126,3 +126,18 @@ triple = multiplier(3)
 
 print(double(5))  # 10
 print(triple(5))  # 15
+
+# Recursive
+def fib(n):
+    return n if n <= 1 else fib(n-1) + fib(n-2)
+
+# Generator (infinite Fibonacci)
+def fib_gen():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+gen = fib_gen()
+for _ in range(10):
+    print(next(gen), end=" ")
