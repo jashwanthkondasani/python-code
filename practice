@@ -116,3 +116,13 @@ def group_anagrams(words):
     return list(groups.values())
 
 print(group_anagrams(["eat","tea","tan","ate","nat","bat"]))
+def multiplier(n):
+    def inner(x):
+        return x * n
+    return inner
+
+double = multiplier(2)
+triple = multiplier(3)
+
+print(double(5))  # 10
+print(triple(5))  # 15
