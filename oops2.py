@@ -1,3 +1,5 @@
+# creating a class and object 
+
 class nani:
     def __init__(self,n,o):
         self.name=n
