@@ -61,3 +61,21 @@ c2=C()
 C1.feature1()
 C2.feature2()
 
+class Grandparent:
+    def show(self):
+        print("I am the Grandparent")
+
+class Parent(Grandparent):
+    def display(self):
+        print("I am the Parent")
+
+class Child(Parent):
+    def print_info(self):
+        print("I am the Child")
+
+# Usage
+c = Child()
+c.show()
+c.display()
+c.print_info()
+
