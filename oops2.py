@@ -89,3 +89,11 @@ print(next(myit))
 print(next(myit))
 print(next(myit))
 
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+print(len(thisdict))
+
