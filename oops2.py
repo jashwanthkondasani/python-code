@@ -182,3 +182,12 @@ sports1.display_info()
 sports1.start_engine()
 sports1.turbo_boost()
 
+# out put
+2020 Toyota Corolla
+Toyota Corolla's engine started!
+2023 Tesla Model 3 (Electric) - Battery: 75 kWh
+Tesla Model 3's engine started!
+Tesla Model 3 is charging...
+2022 Ferrari 488 GTB (Sports) - 660 HP
+Ferrari 488 GTB's engine started!
+Ferrari 488 GTB is using turbo boost!
