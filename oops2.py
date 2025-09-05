@@ -126,3 +126,59 @@ plane1 = Plane("Boeing", "747")     #Create a Plane object
 for x in (car1, boat1, plane1):
   x.move()
 
+# Base class
+class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def display_info(self):
+        print(f"{self.year} {self.brand} {self.model}")
+
+    def start_engine(self):
+        print(f"{self.brand} {self.model}'s engine started!")
+
+# Derived class (inherits from Car)
+class ElectricCar(Car):
+    def __init__(self, brand, model, year, battery_capacity):
+        # call parent constructor
+        super().__init__(brand, model, year)
+        self.battery_capacity = battery_capacity
+
+    def display_info(self):
+        # Override parent method
+        print(f"{self.year} {self.brand} {self.model} (Electric) - Battery: {self.battery_capacity} kWh")
+
+    def charge(self):
+        print(f"{self.brand} {self.model} is charging...")
+
+# Derived class (inherits from Car)
+class SportsCar(Car):
+    def __init__(self, brand, model, year, horsepower):
+        super().__init__(brand, model, year)
+        self.horsepower = horsepower
+
+    def display_info(self):
+        print(f"{self.year} {self.brand} {self.model} (Sports) - {self.horsepower} HP")
+
+    def turbo_boost(self):
+        print(f"{self.brand} {self.model} is using turbo boost!")
+
+# Create objects
+car1 = Car("Toyota", "Corolla", 2020)
+ev1 = ElectricCar("Tesla", "Model 3", 2023, 75)
+sports1 = SportsCar("Ferrari", "488 GTB", 2022, 660)
+
+# Use methods
+car1.display_info()
+car1.start_engine()
+
+ev1.display_info()
+ev1.start_engine()
+ev1.charge()
+
+sports1.display_info()
+sports1.start_engine()
+sports1.turbo_boost()
+
