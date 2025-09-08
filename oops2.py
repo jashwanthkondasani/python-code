@@ -239,3 +239,27 @@ b = Bike()
 
 c.start()
 b.start()
+
+# program 3
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+        self.is_available = True
+
+    def borrow(self):
+        if self.is_available:
+            self.is_available = False
+            print(f"You borrowed '{self.title}'")
+        else:
+            print(f"Sorry, '{self.title}' is not available")
+
+    def return_book(self):
+        self.is_available = True
+        print(f"You returned '{self.title}'")
+
+# Using the class
+b1 = Book("Python Basics", "Guido")
+b1.borrow()       # You borrowed 'Python Basics'
+b1.borrow()       # Sorry, not available
+b1.return_book()  # You returned 'Python Basics'
