@@ -191,3 +191,28 @@ Tesla Model 3 is charging...
 2022 Ferrari 488 GTB (Sports) - 660 HP
 Ferrari 488 GTB's engine started!
 Ferrari 488 GTB is using turbo boost!
+
+# 08/09/2025
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance   # private variable (hidden)
+
+    def deposit(self, amount):
+        self.__balance += amount
+        print(f"Deposited: {amount}")
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+            print(f"Withdrew: {amount}")
+        else:
+            print("Insufficient Balance")
+
+    def get_balance(self):
+        return self.__balance
+
+# Using the class
+acc = BankAccount(1000)
+acc.deposit(500)
+acc.withdraw(200)
+print("Balance:", acc.get_balance())
