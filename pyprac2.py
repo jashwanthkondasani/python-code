@@ -68,3 +68,14 @@ if (year%400==0) or (year%4==0 and year%100!=0):
   print(" it is a leap year ")
 else:
   print(" it is an not an leap year ")
+
+ num = 1234
+temp = num
+reverse = 0
+
+while num > 0:
+    remainder = num % 10          # get last digit
+    reverse = (reverse * 10) + remainder  # build reversed number
+    num = num // 10               # remove last digit
+
+print(reverse)
