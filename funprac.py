@@ -32,6 +32,11 @@ print(mini)
 print(maxi)
 
 // add of two numbers
+def add_numbers(a,b):
+        return a+b
+    
+result=add_numbers(1,3)
+print("sum is:",result)
 
 
 
