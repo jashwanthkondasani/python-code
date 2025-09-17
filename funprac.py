@@ -38,6 +38,33 @@ def add_numbers(a,b):
 result=add_numbers(1,3)
 print("sum is:",result)
 
+# sub of two numbers
+def sub_numbers(x,y):
+    
+    return x-y
+
+result=sub_numbers(8,7)
+print("sub is:",result)
+
+# multi of two numbers
+def mult_numbers(a,b):
+    
+    return a*b
+
+result=mult_numbers(2,3)
+print("mult is:",result)
+
+#  div of two numbers 
+def div_numbers(a,b):
+    
+    return a /b
+
+result=div_numbers(44,2)
+print("division of the numbers is :",result)
+
+
+
+
 
 
 
