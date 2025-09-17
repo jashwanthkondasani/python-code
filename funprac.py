@@ -1,0 +1,40 @@
+// max element in array
+
+a=[11,12,23,24,25,26,27]
+max_element=a[0]
+for i in range(len(a)):
+    if a[i]> max_element:
+        max_element=a[i]
+print(max_element)
+
+// max element in array
+a=[99,100,102,122]
+min_element=a[0]
+for i in range(len(a)):
+    if a[i]<min_element:
+        min_element=a[i]
+print(min_element)
+
+
+// min and max elements of arrays 
+arr=[1,2,3,4,5,6,7,8,100,0]
+mini=arr[0]
+maxi=arr[0]
+
+for i in range(len(arr)):
+   if  arr[i]<mini:
+    mini=arr[i]
+
+   if  arr[i]>maxi:
+    maxi=arr[i]
+
+print(mini)
+print(maxi)
+
+// add of two numbers
+
+
+
+
+
+
