@@ -263,3 +263,21 @@ b1 = Book("Python Basics", "Guido")
 b1.borrow()       # You borrowed 'Python Basics'
 b1.borrow()       # Sorry, not available
 b1.return_book()  # You returned 'Python Basics'
+
+class Bird:
+    def fly(self):
+        print("Birds can fly")
+
+class Penguin(Bird):
+    def fly(self):
+        print("Penguins cannot fly")
+
+# Polymorphism in action
+def flying_test(bird):
+    bird.fly()
+
+sparrow = Bird()
+penguin = Penguin()
+
+flying_test(sparrow)
+flying_test(penguin)
