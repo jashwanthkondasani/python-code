@@ -281,3 +281,19 @@ penguin = Penguin()
 
 flying_test(sparrow)
 flying_test(penguin)
+
+class Student:
+    def __init__(self, name, roll, marks):
+        self.name = name
+        self.roll = roll
+        self.marks = marks
+
+    def display(self):
+        print(f"Name: {self.name}, Roll: {self.roll}, Marks: {self.marks}")
+
+# Creating multiple students
+s1 = Student("Alice", 101, 89)
+s2 = Student("Bob", 102, 76)
+
+s1.display()
+s2.display()
